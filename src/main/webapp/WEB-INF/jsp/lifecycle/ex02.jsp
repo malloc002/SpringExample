@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>JSP 연동</title>
 </head>
 <body>
-	<h1>test</h1>
+	<h1>JSP 연동</h1>
+	
+	<h3>예제 2번</h3>
+	
+	<h4>Hello World!!</h4>
 </body>
 </html>

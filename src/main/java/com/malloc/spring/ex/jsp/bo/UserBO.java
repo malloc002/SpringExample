@@ -22,4 +22,8 @@ public class UserBO {
 		
 		return userDAO.selectLastUser();
 	}
+	
+	public int addUserbyObject(User user) {
+		return userDAO.insertUserByObject(user);
+	}
 }

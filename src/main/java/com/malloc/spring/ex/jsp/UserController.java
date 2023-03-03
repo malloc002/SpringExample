@@ -22,16 +22,31 @@ public class UserController {
 	//이름, 생년월일, 이메일, 자기소개 전달 받고 데이터 저장
 //	@RequestMapping(path = "/add", method = RequestMethod.GET)
 	@PostMapping("/add")
-	@ResponseBody
+//	@ResponseBody -> jsp 쓸거기 때문
 	public String addUser(
 			@RequestParam("name") String name
 			, @RequestParam("birthday") String birthday
 			, @RequestParam("email") String email
-			, @RequestParam("introduce") String introduce) {
+			, @RequestParam("introduce") String introduce
+			, Model model) {
 		
-		int count = userBO.addUser(name, birthday, email, introduce);
+//		int count = userBO.addUser(name, birthday, email, introduce);
+//		
+//		return "삽입결과: " + count;
 		
-		return "삽입결과: " + count;
+		//방금 insert한 id를 얻어 온다
+		//객체로 전달
+		User user = new User();
+		user.setName(name);
+		user.setYyyymmdd(birthday);
+		user.setEmail(email);
+		user.setIntroduce(introduce);
+		
+		int count = userBO.addUserbyObject(user);
+		
+		model.addAttribute("user", user);
+		
+		return "jsp/lastUser";
 	}
 	
 	

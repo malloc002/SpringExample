@@ -21,4 +21,6 @@ public interface UserDAO {
 	public int insertUserByObject(User suser);
 	
 	public List<User> selectUserList();
+	 
+	public int selectCountEmail(@Param("email") String email);
 }

@@ -81,6 +81,10 @@
   		FROM
   			`new_user`
   	</select>
+  	
+  	<select id="selectCountEmail" parameterType="string" resultType="int">
+  		
+  	</select>
   
   </mapper>
   
